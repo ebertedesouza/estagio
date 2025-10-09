@@ -31,7 +31,7 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: #fff;
+  background: #0598b4;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;
 }
@@ -48,7 +48,7 @@ header {
 .navbar h1 {
   font-size: 1.6rem;
   font-weight: 600;
-  color: #222;
+  color: #fff;
 }
 
 .navbar ul {
@@ -58,16 +58,18 @@ header {
 
 .navbar ul li a {
   font-weight: 500;
-  color: #222;
+  color: #fff;
   transition: 0.3s;
 }
 
 .navbar ul li a:hover,
 .navbar ul li a.active {
-  color: #0b9b57;
+  color: #b4d445;
 }
 
-/* MENU HAMBURGUER */
+/* ===========================
+   MENU HAMBURGUER
+=========================== */
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -78,15 +80,68 @@ header {
 .menu-toggle span {
   height: 3px;
   width: 25px;
-  background: #222;
+  background: #fff;
   border-radius: 2px;
+}
+
+/* ===========================
+   RESPONSIVO MENU MOBILE
+=========================== */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+    background: #0598b4; /* fundo azul */
+    position: fixed;
+    top: 60px;
+    right: 0;
+    padding: 20px;
+    border-radius: 0 0 0 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    width: 200px;
+  }
+
+  .navbar ul li a {
+    color: #fff; /* links brancos */
+  }
+
+  .navbar ul li a:hover,
+  .navbar ul li a.active {
+    color: #b4d445; /* verde ao clicar/hover */
+  }
+
+  .navbar ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .cards-container, .noticias-grid, .news-grid {
+    flex-direction: column;
+  }
+
+  .sobre-home p {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+
+  .section {
+    padding: 100px 15px 50px;
+  }
+
+  footer {
+    padding: 30px 15px;
+  }
 }
 
 /* ===========================
    SEÇÕES GERAIS
 =========================== */
 .section {
-  padding: 120px 20px 80px; /* padding-top maior para navbar fixa */
+  padding: 120px 20px 80px; 
   max-width: 1200px;
   margin: auto;
 }
@@ -120,14 +175,28 @@ header {
   display: inline-block;
   margin-top: 10px;
   padding: 10px 25px;
-  background: #0b9b57;
+  background: #b4d445;
   color: #fff;
   border-radius: 6px;
   transition: 0.3s;
 }
 
 .sobre-home .btn:hover {
-  background: #077643;
+  background: #b4d445;
+}
+
+.banner-home {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 40px;
+}
+
+.banner-home img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
 }
 
 /* ===========================
@@ -152,13 +221,14 @@ header {
 
 .card h3 {
   font-size: 2rem;
-  color: #0b9b57;
+  color: #b4d445;
   margin-bottom: 10px;
 }
 
 .card p {
   font-size: 1rem;
-  color: #555;
+  color: #b4d445;
+  text-align: center;
 }
 
 /* ===========================
@@ -176,6 +246,8 @@ header {
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   overflow: hidden;
   transition: transform 0.3s;
+  position: relative; /* necessário para a posição da data */
+  padding-bottom: 40px; /* espaço para a data */
 }
 
 .noticia-card:hover, .news-card:hover {
@@ -203,8 +275,19 @@ header {
 .noticia-card a, .news-card a {
   display: block;
   padding: 0 15px 15px 15px;
-  color: #0b9b57;
+  color: #b4d445;
   font-weight: 500;
+}
+
+/* ===========================
+   DATA DO CARD
+=========================== */
+.noticia-card .date, .news-card .date {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  font-size: 0.8rem;
+  color: #555;
 }
 
 /* ===========================
@@ -225,15 +308,48 @@ header {
   color: #555;
 }
 
+.section.projeto h3 {
+  text-align: center;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.section h3 {
+  color: #000;
+  margin-top: 100px; 
+  margin-bottom: 50px; 
+}
+
+.section p {
+  text-align: justify;
+  font-size: 1rem;
+  margin-bottom: 25px; 
+}
+
+.section ul {
+  margin-bottom: 25px; 
+}
+
 /* ===========================
    MAPA E CRONOGRAMA
 =========================== */
 .mapa img, .cronograma img {
-  width: 100%;
+  width: 70%;
   height: auto;
   display: block;
   margin: 20px auto;
   border-radius: 10px;
+}
+
+/* ===========================
+   CAPACITACAO
+=========================== */
+.section.capacitacao h3 {
+  text-align: center;
 }
 
 /* ===========================
@@ -260,15 +376,29 @@ header {
   padding: 12px;
   border: none;
   border-radius: 6px;
-  background: #0b9b57;
+  background: #b4d445;
   color: #fff;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
+  margin-bottom: 40px;
 }
 
 .contact-form button:hover {
-  background: #077643;
+  background: #b4d445;
+}
+
+.redes-sociais {
+  display: flex;
+  flex-direction: column; 
+  gap: 10px; 
+  margin-top: 10px;
+}
+
+.redes-sociais a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 /* ===========================
@@ -299,7 +429,7 @@ footer {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background: #0b9b57;
+  background: #b4d445;
   color: #fff;
   border: none;
   padding: 12px 16px;
@@ -313,47 +443,4 @@ footer {
 
 #topBtn:hover {
   background: #077643;
-}
-
-/* ===========================
-   RESPONSIVO
-=========================== */
-@media (max-width: 768px) {
-  .navbar ul {
-    flex-direction: column;
-    gap: 15px;
-    display: none;
-    background: #fff;
-    position: fixed;
-    top: 60px;
-    right: 30px;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-
-  .navbar ul.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .cards-container, .noticias-grid, .news-grid {
-    flex-direction: column;
-  }
-
-  .sobre-home p {
-    font-size: 0.95rem;
-    padding: 0 10px;
-  }
-
-  .section {
-    padding: 100px 15px 50px;
-  }
-
-  footer {
-    padding: 30px 15px;
-  }
 }
