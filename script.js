@@ -1,11 +1,13 @@
 // ===========================
 // MENU HAMBURGUER MOBILE
 // ===========================
-const mobileMenu = document.getElementById("mobile-menu");
-const navLinks = document.querySelector(".navbar ul");
+const mobileToggle = document.getElementById("mobileToggle");
+const navList = document.querySelector(".nav-list");
 
-mobileMenu.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
+mobileToggle.addEventListener("click", () => {
+  const expanded = mobileToggle.getAttribute("aria-expanded") === "true";
+  mobileToggle.setAttribute("aria-expanded", String(!expanded));
+  navList.classList.toggle("open");
 });
 
 // ===========================
@@ -20,8 +22,9 @@ links.forEach(link => {
     if (target) {
       target.scrollIntoView({ behavior: "smooth" });
     }
-    if (navLinks.classList.contains("active")) {
-      navLinks.classList.remove("active");
+    if (navList.classList.contains("open")) {
+      navList.classList.remove("open");
+      mobileToggle.setAttribute("aria-expanded", "false");
     }
   });
 });
@@ -32,7 +35,7 @@ links.forEach(link => {
 const topBtn = document.getElementById("topBtn");
 
 window.addEventListener("scroll", () => {
-  if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+  if (window.scrollY > 300) {
     topBtn.style.display = "block";
   } else {
     topBtn.style.display = "none";
@@ -44,7 +47,7 @@ topBtn.addEventListener("click", () => {
 });
 
 // ===========================
-// FORMULÁRIO DE CONTATO (EXEMPLO)
+// FORMULÁRIO DE CONTATO
 // ===========================
 const contactForm = document.querySelector(".contact-form");
 
@@ -55,3 +58,18 @@ if (contactForm) {
     contactForm.reset();
   });
 }
+
+// ===========================
+// REVEAL ANIMATION
+// ===========================
+const reveals = document.querySelectorAll(".reveal");
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("in-view");
+      io.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+reveals.forEach(el => io.observe(el));

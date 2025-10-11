@@ -7,58 +7,69 @@
   <title>Contato - APRM ATC</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <h1>Projeto APRM ATC</h1>
-      <div class="menu-toggle" id="mobile-menu">
+  <header class="site-header">
+    <div class="navbar container">
+      <a class="brand" href="index.html">
+        <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C8 6 4 7 4 11s4 7 8 9 8-3 8-7-4-11-8-11z" fill="currentColor"/>
+        </svg>
+        <span>Projeto APRM ATC</span>
+      </a>
+      <button id="mobileToggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="o-projeto.html">O Projeto</a></li>
-        <li><a href="capacitacao.html">Capacitação</a></li>
-        <li><a href="material-educativo.html">Material Educativo</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="contato.html" class="active">Contato</a></li>
-      </ul>
-    </nav>
+      </button>
+      <nav class="nav" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="o-projeto.html">O Projeto</a></li>
+          <li><a href="capacitacao.html">Capacitação</a></li>
+          <li><a href="material-educativo.html">Material Educativo</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html" class="active">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="section contato">
-    <h2>Contato</h2>
+  <main>
+    <section class="section contato-section container">
+      <h2>Contato</h2>
 
-    <form class="contact-form">
-      <input type="text" name="nome" placeholder="Seu nome" required>
-      <input type="email" name="email" placeholder="Seu e-mail" required>
-      <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
-      <button type="submit">Enviar Mensagem</button>
-    </form>
+      <form class="contact-form reveal">
+        <input type="text" name="nome" placeholder="Seu nome" required>
+        <input type="email" name="email" placeholder="Seu e-mail" required>
+        <textarea name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+        <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+      </form>
 
-    <div class="contato-info">
-      <p>E-mails: <a href="mailto:contato@aguasustentavel.org.br">contato@aguasustentavel.org.br</a> | <a href="mailto:condemat@condemat.sp.gov.br">condemat@condemat.sp.gov.br</a></p>
-      <p>Telefone: (11) 99661-5747</p>
-      <div class="redes-sociais">
-        <a href="#" target="_blank">Instagram</a>
-        <a href="#" target="_blank">LinkedIn</a>
+      <div class="contato-info reveal">
+        <p>E-mails: 
+          <a href="mailto:ebertesouza16@gmail.com">ebertesouza16@gmail.com</a>
+        </p>
+        <p>Telefone: (11) 91473-3819</p>
+        <div class="redes-sociais">
+          <a href="#" target="_blank">Instagram</a>
+          <a href="#" target="_blank">LinkedIn</a>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
- <footer>
+  <footer class="site-footer">
     <div class="footer-logos">
-      <img src="assets/logo-ias.png">
-      <img src="assets/logo-condemat.png">
-      <img src="assets/logo-fehidro.png">
+      <img src="assets/logo-ias.png" alt="IAS">
+      <img src="assets/logo-condemat.png" alt="Condemat">
+      <img src="assets/logo-fehidro.png" alt="Fehidro">
     </div>
     <p>© 2025 Projeto APRM ATC. Todos os direitos reservados.</p>
   </footer>
 
-  <button id="topBtn">↑</button>
+  <button id="topBtn" aria-label="Voltar ao topo">↑</button>
   <script src="script.js"></script>
 </body>
 </html>

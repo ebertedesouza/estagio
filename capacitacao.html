@@ -7,59 +7,66 @@
   <title>Capacitação - APRM ATC</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <nav class="navbar">
-      <h1>Projeto APRM ATC</h1>
-      <div class="menu-toggle" id="mobile-menu">
+    <div class="navbar container">
+      <a class="brand" href="index.html">
+        <span>Projeto APRM ATC</span>
+      </a>
+      <button id="mobileToggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="o-projeto.html">O Projeto</a></li>
-        <li><a href="capacitacao.html" class="active">Capacitação</a></li>
-        <li><a href="material-educativo.html">Material Educativo</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
+      </button>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="o-projeto.html">O Projeto</a></li>
+          <li><a href="capacitacao.html" class="active">Capacitação</a></li>
+          <li><a href="material-educativo.html">Material Educativo</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="section capacitacao">
-    <h2>Capacitação</h2>
-    <p>Serão realizadas 8 oficinas presenciais com 300 vagas no total, com duração de 5 horas (3h teóricas e 2h práticas).</p>
+  <main>
+    <section class="section capacitacao-section container">
+      <h2>Capacitação</h2>
+      <p class="reveal">Serão realizadas 8 oficinas presenciais com 300 vagas no total, com duração de 5 horas (3h teóricas e 2h práticas).</p>
 
-    <h3>Locais e datas</h3>
-    <p>Em breve.</p>
+      <h3 class="reveal">Locais e datas</h3>
+      <p class="reveal">Em breve.</p>
 
-    <h3>Etapas do projeto</h3>
-    <ul class="etapas">
-      <li>Levantamento de dados</li>
-      <li>Análise de necessidades</li>
-      <li>Logística e infraestrutura</li>
-    </ul>
+      <h3 class="reveal">Etapas do projeto</h3>
+      <ul class="etapas reveal">
+        <li>Levantamento de dados</li>
+        <li>Análise de necessidades</li>
+        <li>Logística e infraestrutura</li>
+      </ul>
 
-    <h3>Cronograma</h3>
-    <div class="cronograma">
-      <img src="assets/img/cronograma.png" alt="Mapa APRM ATC">
-    </div>
+      <h3 class="reveal">Cronograma</h3>
+      <div class="cronograma reveal">
+        <img src="assets/img/cronograma.png" alt="Cronograma APRM ATC">
+      </div>
 
-    <a href="#" class="btn">Inscrições em breve</a>
-  </section>
+      <a href="#" class="btn btn-primary reveal">Inscrições em breve</a>
+    </section>
+  </main>
 
-  <footer>
+  <footer class="site-footer">
     <div class="footer-logos">
-      <img src="assets/logo-ias.png">
-      <img src="assets/logo-condemat.png">
-      <img src="assets/logo-fehidro.png">
+      <img src="assets/logo-ias.png" alt="IAS">
+      <img src="assets/logo-condemat.png" alt="Condemat">
+      <img src="assets/logo-fehidro.png" alt="Fehidro">
     </div>
     <p>© 2025 Projeto APRM ATC. Todos os direitos reservados.</p>
   </footer>
-  <button id="topBtn">↑</button>
+
+  <button id="topBtn" aria-label="Voltar ao topo">↑</button>
   <script src="script.js"></script>
 </body>
 </html>

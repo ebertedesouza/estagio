@@ -7,100 +7,134 @@
   <title>Projeto APRM ATC - Home</title>
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <h1>Projeto APRM ATC</h1>
-      <div class="menu-toggle" id="mobile-menu">
+  <header class="site-header">
+    <div class="navbar container">
+      <a class="brand" href="index.html">
+        <svg class="brand-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C8 6 4 7 4 11s4 7 8 9 8-3 8-7-4-11-8-11z" fill="currentColor"/>
+        </svg>
+        <span>Projeto APRM ATC</span>
+      </a>
+      <button id="mobileToggle" class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
-      </div>
-      <ul>
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="o-projeto.html">O Projeto</a></li>
-        <li><a href="capacitacao.html">Capacitação</a></li>
-        <li><a href="material-educativo.html">Material Educativo</a></li>
-        <li><a href="noticias.html">Notícias</a></li>
-        <li><a href="contato.html">Contato</a></li>
-      </ul>
-    </nav>
+      </button>
+      <nav class="nav" aria-label="Menu principal">
+        <ul class="nav-list">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="o-projeto.html">O Projeto</a></li>
+          <li><a href="capacitacao.html">Capacitação</a></li>
+          <li><a href="material-educativo.html">Material Educativo</a></li>
+          <li><a href="noticias.html">Notícias</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <section class="section sobre-home">
-    <div class="banner-home">
-      <img src="assets/img/banner-home.png" alt="Capacitação da População Rural em Boas Práticas Agrícolas e Técnicas de Irrigação na Área de Proteção e Recuperação dos Mananciais Alto Tietê (APRM ATC)">
-    </div>
-    <p>O Projeto tem como objetivo principal promover a formação de produtores rurais e agentes públicos municipais para o uso eficiente dos recursos hídricos. A iniciativa, coordenada pelo CONDEMAT em parceria com o Instituto Água Sustentável e financiada pelo FEHIDRO, busca fortalecer a gestão ambiental e a conservação dos mananciais por meio de oficinas teóricas e práticas, incentivo à adoção de técnicas agrícolas mais eficientes e disseminação de conhecimento técnico voltado à sustentabilidade e à proteção das nascentes da região do Alto Tietê Cabeceiras.</p>
-    <a href="o-projeto.html" class="btn">Saiba Mais</a>
-</section>
+  <main>
+    <!-- BANNER IMAGEM FULLSCREEN -->
+    <section class="banner-top">
+      <img src="assets/img/banner-home.png" alt="Capacitação da População Rural" loading="lazy">
+    </section>
 
+    <!-- TEXTO PRINCIPAL -->
+    <section class="hero-text-section section">
+      <div class="container">
+        <a href="o-projeto.html" class="btn btn-primary">Saiba Mais</a>
+      </div>
+    </section>
 
-  <section class="section highlights">
-    <div class="cards-container">
-      <div class="card">
-        <h3>300</h3>
-        <p>Vagas</p>
+    <!-- NOTÍCIAS -->
+    <section class="section noticias-home">
+      <h2>Últimas Notícias</h2>
+      <div class="noticias-grid">
+        <div class="noticia-card reveal">
+          <img src="assets/news1.jpg" alt="Notícia 1">
+          <h3>Oficinas de capacitação serão realizadas em breve</h3>
+          <p>Data: 02/10/2025</p>
+          <a href="noticias.html">Ler mais</a>
+        </div>
+        <div class="noticia-card reveal">
+          <img src="assets/news2.jpg" alt="Notícia 2">
+          <h3>Municípios se preparam para as atividades do projeto</h3>
+          <p>Data: 15/09/2025</p>
+          <a href="noticias.html">Ler mais</a>
+        </div>
+        <div class="noticia-card reveal">
+          <img src="assets/news3.jpg" alt="Notícia 3">
+          <h3>Equipe técnica realiza levantamento de campo</h3>
+          <p>Data: 01/09/2025</p>
+          <a href="noticias.html">Ler mais</a>
+        </div>
       </div>
-      <div class="card">
-        <h3>8</h3>
-        <p>Oficinas</p>
+    </section>
+
+  <!-- ===========================
+       RODAPÉ DIGITAL COMPLETO
+  ============================ -->
+  <footer class="site-footer">
+    <div class="footer-upper">
+      <div class="footer-logos">
+        <img src="assets/img/logo-fehidro.png" alt="FEHIDRO">
+        <img src="assets/img/logo-agua.png" alt="Editora Água Sustentável">
+        <div class="logo-condemat">
+          <img src="assets/img/logo-condemat.png" alt="CONDEMAT AT+">
+        </div>
       </div>
-      <div class="card">
-        <h3>6</h3>
-        <p>Municípios</p>
+
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <div class="contact-info">
+        <p>Editora Instituto Água Sustentável</p>
+        <p>E-mail: <a href="mailto:editora.ias@aguasustentavel.org.br">editora.ias@aguasustentavel.org.br</a></p>
+        <p>Telefone/WhatsApp: (11) 99661-5747</p>
+        <p>CNPJ: 28.135.593/0001-12</p>
       </div>
     </div>
-  </section>
 
-  <section class="section noticias-home">
-    <h2>Últimas Notícias</h2>
-    <div class="noticias-grid">
-      <div class="noticia-card">
-        <img src="assets/news1.jpg" alt="Notícia 1">
-        <h3>Oficinas de capacitação serão realizadas em breve</h3>
-        <p>Data: 02/10/2025</p>
-        <a href="noticias.html">Ler mais</a>
-      </div>
-      <div class="noticia-card">
-        <img src="assets/news2.jpg" alt="Notícia 2">
-        <h3>Municípios se preparam para as atividades do projeto</h3>
-        <p>Data: 15/09/2025</p>
-        <a href="noticias.html">Ler mais</a>
-      </div>
-      <div class="noticia-card">
-        <img src="assets/news3.jpg" alt="Notícia 3">
-        <h3>Equipe técnica realiza levantamento de campo</h3>
-        <p>Data: 01/09/2025</p>
-        <a href="noticias.html">Ler mais</a>
-      </div>
+    <div class="footer-lower">
+      <p>TODOS OS DIREITOS RESERVADOS À EDITORA INSTITUTO ÁGUA SUSTENTÁVEL</p>
     </div>
-  </section>
-
-  <section class="section contato-home">
-    <h2>Contato</h2>
-    <div class="contato-info">
-      <p>E-mails: <a href="mailto:contato@aguasustentavel.org.br">contato@aguasustentavel.org.br</a> | <a href="mailto:condemat@condemat.sp.gov.br">condemat@condemat.sp.gov.br</a></p>
-      <p>Telefone: (11) 99661-5747</p>
-      <div class="redes-sociais">
-        <a href="#" target="_blank">Instagram</a>
-        <a href="#" target="_blank">LinkedIn</a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-logos">
-      <img src="assets/logo-ias.png">
-      <img src="assets/logo-condemat.png">
-      <img src="assets/logo-fehidro.png">
-    </div>
-    <p>© 2025 Projeto APRM ATC. Todos os direitos reservados.</p>
   </footer>
 
-  <button id="topBtn">↑</button>
-  <script src="script.js"></script>
+  <script>
+    (function () {
+      const mobileToggle = document.getElementById('mobileToggle');
+      const navList = document.querySelector('.nav-list');
+      mobileToggle.addEventListener('click', () => {
+        const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+        mobileToggle.setAttribute('aria-expanded', String(!expanded));
+        navList.classList.toggle('open');
+      });
+
+      const topBtn = document.getElementById('topBtnFooter');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) topBtn.style.display = 'block'; else topBtn.style.display = 'none';
+      });
+      topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      const reveals = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+          if (e.isIntersecting) {
+            e.target.classList.add('in-view');
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.15 });
+      reveals.forEach(r => io.observe(r));
+    })();
+  </script>
 </body>
 </html>
