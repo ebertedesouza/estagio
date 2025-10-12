@@ -8,7 +8,9 @@
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0e6ad4b.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
   <header>
     <div class="navbar container">
@@ -34,39 +36,110 @@
   </header>
 
   <main>
-    <section class="section capacitacao-section container">
-      <h2>Capacitação</h2>
-      <p class="reveal">Serão realizadas 8 oficinas presenciais com 300 vagas no total, com duração de 5 horas (3h teóricas e 2h práticas).</p>
-
-      <h3 class="reveal">Locais e datas</h3>
-      <p class="reveal">Em breve.</p>
-
-      <h3 class="reveal">Etapas do projeto</h3>
-      <ul class="etapas reveal">
-        <li>Levantamento de dados</li>
-        <li>Análise de necessidades</li>
-        <li>Logística e infraestrutura</li>
-      </ul>
-
-      <h3 class="reveal">Cronograma</h3>
-      <div class="cronograma reveal">
-        <img src="assets/img/cronograma.png" alt="Cronograma APRM ATC">
+    <section class="section etapas">
+  <div class="container">
+    <h2>Etapas do Projeto</h2>
+    <div class="etapas-flex">
+      <div class="etapa-card" style="background-image: url('assets/img/dados.png');">
+        <div class="etapa-content">
+          <h3>Levantamento de dados</h3>
+          <p>Coleta e organização das informações iniciais sobre o território e os produtores locais.</p>
+        </div>
       </div>
 
-      <a href="#" class="btn btn-primary reveal">Inscrições em breve</a>
-    </section>
-  </main>
+      <div class="etapa-card" style="background-image: url('assets/img/analise.png');">
+        <div class="etapa-content">
+          <h3>Análise de necessidades</h3>
+          <p>Identificação das principais demandas e oportunidades para a capacitação dos participantes.</p>
+        </div>
+      </div>
 
-  <footer class="site-footer">
-    <div class="footer-logos">
-      <img src="assets/logo-ias.png" alt="IAS">
-      <img src="assets/logo-condemat.png" alt="Condemat">
-      <img src="assets/logo-fehidro.png" alt="Fehidro">
+      <div class="etapa-card" style="background-image: url('assets/img/logistica.png');">
+        <div class="etapa-content">
+          <h3>Logística e infraestrutura</h3>
+          <p>Planejamento das oficinas, locais, transporte e materiais de apoio para os eventos.</p>
+        </div>
+      </div>
+
+      <div class="etapa-card" style="background-image: url('assets/img/execucao.png');">
+        <div class="etapa-content">
+          <h3>Execução das oficinas</h3>
+          <p>Realização das atividades práticas e teóricas com produtores e técnicos municipais.</p>
+        </div>
+      </div>
+
+      <div class="etapa-card" style="background-image: url('assets/img/resultados.png');">
+        <div class="etapa-content">
+          <h3>Avaliação dos resultados</h3>
+          <p>Monitoramento e avaliação dos impactos e aprendizados alcançados pelo projeto.</p>
+        </div>
+      </div>
     </div>
-    <p>© 2025 Projeto APRM ATC. Todos os direitos reservados.</p>
+  </div>
+</section>
+
+
+<section class="section cronograma">
+  <div class="container">
+    <h2>Cronograma de Atividades</h2>
+    <div class="tabela-wrapper">
+      <table class="tabela-cronograma">
+        <thead>
+          <tr>
+            <th>Próximos Passos</th>
+            <th>Set</th><th>Out</th><th>Nov</th><th>Dez</th><th>Jan</th><th>Fev</th>
+            <th>Mar</th><th>Abr</th><th>Mai</th><th>Jun</th><th>Jul</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Coleta de dados em campo e visitas aos produtores</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Elaboração do Material Base das Capacitações</td><td></td><td>X</td><td>X</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+          <tr><td>Divulgação das Capacitações</td><td></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td></td></tr>
+          <tr><td>Conteúdos de mídias</td><td></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+          <tr><td>Eventos</td><td></td><td></td><td></td><td>X</td><td></td><td></td><td></td><td></td><td></td><td>X</td><td></td></tr>
+          <tr><td>Capacitações</td><td></td><td></td><td></td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td></td></tr>
+          <tr><td>Entrega do Guia de Boas Práticas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>X</td><td>X</td><td></td></tr>
+          <tr><td>Relatórios</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td><td>X</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===========================
+       RODAPÉ DIGITAL COMPLETO
+  ============================ -->
+  <footer class="site-footer">
+    <div class="footer-upper">
+      <div class="footer-logos">
+        <img src="assets/img/logo-fehidro.png" alt="FEHIDRO">
+        <img src="assets/img/logo-condemat.png" alt="CONDEMAT AT+">
+        <div class="logo-condemat">
+          <img src="assets/img/logo-agua.png" alt="Editora Água Sustentável">
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+
+      <div class="contact-info">
+        <p>Editora Instituto Água Sustentável</p>
+        <p>E-mail: <a href="mailto:editora.ias@aguasustentavel.org.br">editora.ias@aguasustentavel.org.br</a></p>
+        <p>Telefone/WhatsApp: (11) 99661-5747</p>
+        <p>CNPJ: 28.135.593/0001-12</p>
+      </div>
+    </div>
+
+    <div class="footer-lower">
+      <p>TODOS OS DIREITOS RESERVADOS À EDITORA INSTITUTO ÁGUA SUSTENTÁVEL</p>
+    </div>
   </footer>
 
-  <button id="topBtn" aria-label="Voltar ao topo">↑</button>
   <script src="script.js"></script>
 </body>
 </html>
