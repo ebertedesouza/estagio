@@ -16,7 +16,7 @@ mobileToggle.addEventListener("click", () => {
 const links = document.querySelectorAll('a[href^="#"]');
 
 links.forEach(link => {
-  link.addEventListener("click", function(e) {
+  link.addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector(this.getAttribute("href"));
     if (target) {
@@ -52,7 +52,7 @@ topBtn.addEventListener("click", () => {
 const contactForm = document.querySelector(".contact-form");
 
 if (contactForm) {
-  contactForm.addEventListener("submit", function(e) {
+  contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
     alert("Mensagem enviada com sucesso!");
     contactForm.reset();
@@ -63,13 +63,16 @@ if (contactForm) {
 // REVEAL ANIMATION
 // ===========================
 const reveals = document.querySelectorAll(".reveal");
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("in-view");
-      io.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.15 });
+const io = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("in-view");
+        io.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
 
-reveals.forEach(el => io.observe(el));
+reveals.forEach((el) => io.observe(el));
