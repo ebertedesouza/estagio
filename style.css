@@ -1533,6 +1533,14 @@ main {
 .site-footer .footer-logos img {
   max-height: 50px;
   width: auto;
+  align-self: center; /* 🔹 reforço opcional */
+
+}
+
+.site-footer .footer-logos img.ias {
+  max-height: 100px; /* aumenta só a IAS */
+  width: auto;
+  align-self: center; /* 🔹 reforço opcional */
 }
 
 .site-footer .footer-text {
