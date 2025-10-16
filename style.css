@@ -23,6 +23,10 @@ a {
 ul {
   list-style: none;
 }
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* impede rolagem horizontal */
+}
 
 /* ===========================
    CABEÇALHO FIXO
@@ -158,6 +162,7 @@ header {
 =========================== */
 .banner-top {
   width: 110%;
+  padding-top: 40px; /* altura exata do header */
   height: 135vh;
   overflow: hidden;
 }
@@ -165,33 +170,29 @@ header {
 .banner-top img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* cobre todo o container sem distorcer */
+  object-fit: cover;
   object-position: center;
 }
 
 /* ===========================
-   BANNER IMAGEM TOP RESPONSIVO
+   BANNER RESPONSIVO
 =========================== */
 @media (max-width: 768px) {
   .banner-top {
-    width: 100%;
-    height: auto;
-    max-height: 400px; /* você pode ajustar */
-    overflow: hidden;
+    padding-top: 40px; /* altura exata do header */
+    height: auto;      /* banner cresce conforme a imagem */
   }
 
   .banner-top img {
+    content: url("assets/img/banner-home-mobile.png"); /* imagem mobile */
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 70%; /* move a imagem para baixo, ajustando a parte de cima */
+    height: auto;
+    object-fit: contain;       /* mantém toda a imagem visível */
+    object-position: top;      /* topo da imagem visível */
     display: block;
   }
-
-  .hero-text-section {
-    padding: 40px 15px;
-  }
 }
+
 
 
 
@@ -448,507 +449,6 @@ header {
     text-align: left;
   }
 }
-
-
-/* ===========================
-   MUNICÍPIOS
-=========================== */
-.municipios-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
-  gap: 20px; /* espaço entre os cards */
-  justify-items: center; /* centraliza os cards horizontalmente */
-  padding: 20px 0;
-  
-}
-.municipios-section h2 {
-  color: #133b67;
-}
-
-.municipios-grid h3 {
-  color: #fff;
-  font-size: 1.2rem;
-  margin: 0;
-}
-
-.mun-card {
-  background-color: #133b67;
-  border-radius: 12px;
-  padding: 25px 15px;
-  width: 100%;
-  max-width: 250px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: default;
-}
-
-.mun-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
-
-@media screen and (max-width: 1024px) {
-  .municipios-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 por linha em tablets */
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .municipios-grid {
-    grid-template-columns: 1fr; /* 1 por linha em celulares */
-  }
-}
-/* ===========================
-   MAPA RESPONSIVO
-=========================== */
-.mapa-wrap {
-  text-align: center;
-}
-
-.mapa-wrap img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  border-radius: 10px;
-}
-
-.mapa-legend {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  font-size: 0.9rem;
-  margin-top: 10px;
-}
-
-/* ===========================
-   ESTILOS GERAIS
-=========================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Poppins", sans-serif;
-  background-color: #fff;
-  color: #222;
-  line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul {
-  list-style: none;
-}
-
-main {
-  flex: 1;
-}
-
-/* ===========================
-   CABEÇALHO FIXO
-=========================== */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #133b67;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding: 10px 20px;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.2rem;
-}
-
-.brand-icon {
-  width: 30px;
-  height: 30px;
-}
-
-/* ===========================
-   MENU HAMBURGUER
-=========================== */
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 22px;
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  padding: 0;
-  margin-left: auto;
-}
-
-.menu-toggle span {
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: #fff;
-  border-radius: 3px;
-  transition: all 0.3s ease;
-}
-
-/* ===========================
-   MENU PRINCIPAL
-=========================== */
-.nav-list {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-list li a {
-  font-weight: 500;
-  color: #fff;
-  transition: 0.3s;
-}
-
-.nav-list li a:hover,
-.nav-list li a.active {
-  color: #b4d445;
-}
-
-/* ===========================
-   RESPONSIVO
-=========================== */
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-  }
-
-  .nav-list {
-    flex-direction: column;
-    gap: 15px;
-    display: none;
-    position: fixed;
-    top: 60px;
-    right: 0;
-    background: #133b67;
-    width: 220px;
-    padding: 20px;
-    border-radius: 0 0 0 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  }
-
-  .nav-list.open {
-    display: flex;
-  }
-}
-
-/* ===========================
-   SEÇÕES
-=========================== */
-.section {
-  padding: 120px 20px 80px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: #133b67;
-}
-
-.section p {
-  text-align: center;
-  font-size: 1rem;
-  margin-bottom: 30px;
-}
-
-/* ===========================
-   BANNER IMAGEM TOP
-=========================== */
-.banner-top {
-  width: 110%;
-  height: 135vh;
-  overflow: hidden;
-}
-
-.banner-top img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* ===========================
-   BANNER RESPONSIVO
-=========================== */
-@media (max-width: 768px) {
-  .banner-top {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    overflow: hidden;
-  }
-
-  .banner-top img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 70%;
-    display: block;
-  }
-
-  .hero-text-section {
-    padding: 40px 15px;
-  }
-}
-
-/* ===========================
-   HERO
-=========================== */
-.hero-text-section {
-  text-align: center;
-  padding: 80px 20px 120px;
-}
-
-.hero-text-section h2 {
-  font-size: 2rem;
-  margin-bottom: 50px;
-  color: #133b67;
-}
-
-.hero-text-section p {
-  font-size: 1.2rem;
-  margin-bottom: 50px;
-}
-
-.hero-text-section .btn {
-  display: inline-block;
-  margin-top: 0;
-  margin-bottom: 40px;
-  padding: 12px 28px;
-  background: #133b67;
-  color: #fff;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: 500;
-  transition: background 0.3s;
-}
-
-.hero-text-section .btn:hover {
-  background: #133b67;
-}
-
-/* ===========================
-   CARDS
-=========================== */
-.cards-grid,
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 30px;
-}
-
-.card,
-.news-card {
-  background: #f4f4f4;
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-  transition: 0.3s;
-}
-
-.card img,
-.news-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 15px;
-}
-
-.card h3,
-.news-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.1rem;
-}
-
-.card a,
-.news-card a {
-  display: inline-block;
-  margin-top: 10px;
-  background: #133b67;
-  color: #fff;
-  padding: 8px 15px;
-  border-radius: 5px;
-  transition: 0.3s;
-}
-
-.card a:hover,
-.news-card a:hover {
-  background: #133b67;
-}
-
-/* ===========================
-   NOTÍCIAS
-=========================== */
-.noticias-section h2 {
-  font-size: 2rem;
-  color: #133b67;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.news-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-}
-
-.news-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  height: 100%;
-}
-
-.news-card img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-.news-card h3 {
-  font-size: 1.2rem;
-  margin: 15px 20px 10px;
-}
-
-.news-card .date {
-  margin: 0 20px 15px;
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.news-card .btn {
-  margin: 0 0 20px;
-  align-self: center;
-}
-
-/* ===========================
-   RESULTADOS
-=========================== */
-.resultados-section {
-  padding: 40px 0;
-  background-color: #fff;
-}
-
-.resultados-section h2 {
-  font-size: 2rem;
-  color: #133b67;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.resultados-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-.resultado-card {
-  position: relative;
-  width: 100%;
-  border-radius: 14px;
-  overflow: hidden;
-  min-height: 350px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.resultado-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-}
-
-.resultado-media {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.resultado-content {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  z-index: 2;
-  color: #fff;
-  text-align: left;
-  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
-  border-radius: 0 0 14px 14px;
-}
-
-.resultado-content h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-}
-
-.resultado-content p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #f1f1f1;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-}
-
-/* Remove qualquer overlay anterior */
-.resultado-card::after {
-  display: none;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .resultado-content h3 {
-    font-size: 1.1rem;
-  }
-  .resultado-content p {
-    font-size: 0.9rem;
-  }
-}
-
-
-
 /* ===========================
    OBJETIVOS
 =========================== */
@@ -1105,6 +605,170 @@ header {
 .footer-logos img {
   height: 50px;
 }
+
+
+/* ===========================
+   MUNICÍPIOS
+=========================== */
+.municipios-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas iguais */
+  gap: 20px; /* espaço entre os cards */
+  justify-items: center; /* centraliza os cards horizontalmente */
+  padding: 20px 0;
+  
+}
+.municipios-section h2 {
+  color: #133b67;
+}
+
+.municipios-grid h3 {
+  color: #fff;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.mun-card {
+  background-color: #133b67;
+  border-radius: 12px;
+  padding: 25px 15px;
+  width: 100%;
+  max-width: 250px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.mun-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+@media screen and (max-width: 1024px) {
+  .municipios-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 por linha em tablets */
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .municipios-grid {
+    grid-template-columns: 1fr; /* 1 por linha em celulares */
+  }
+}
+/* ===========================
+   MAPA RESPONSIVO
+=========================== */
+.mapa-wrap {
+  text-align: center;
+}
+
+.mapa-wrap img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.mapa-legend {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
+/* ===========================
+   RESULTADOS
+=========================== */
+.resultados-section {
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+.resultados-section h2 {
+  font-size: 2rem;
+  color: #133b67;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.resultados-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.resultado-card {
+  position: relative;
+  width: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 350px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resultado-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+.resultado-media {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.resultado-content {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  z-index: 2;
+  color: #fff;
+  text-align: left;
+  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
+  border-radius: 0 0 14px 14px;
+}
+
+.resultado-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.resultado-content p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f1f1f1;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+}
+
+/* Remove qualquer overlay anterior */
+.resultado-card::after {
+  display: none;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .resultado-content h3 {
+    font-size: 1.1rem;
+  }
+  .resultado-content p {
+    font-size: 0.9rem;
+  }
+}
+
+
+
 
 /* ===========================
    Capacitação
@@ -1453,22 +1117,23 @@ header {
 /* ===== REDES SOCIAIS ===== */
 .redes-sociais {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 25px;
-  margin-top: 20px;
+  justify-content: center;  /* centraliza os ícones */
+  gap: 15px;                /* espaçamento entre os ícones */
+  margin-top: 15px;
 }
 
-.redes-sociais a {
-  color: #133b67;
-  font-size: 1.8rem;
-  transition: color 0.3s ease, transform 0.3s ease;
+.redes-sociais a img {
+  width: 50px;            /* largura uniforme */
+  height: 50px;           /* altura uniforme */
+  object-fit: contain;    /* mantém proporção sem distorcer */
+  transition: transform 0.3s;
 }
 
-.redes-sociais a:hover {
-  color: #133b67;
-  transform: scale(1.15);
+.redes-sociais a:hover img {
+  transform: scale(1.1);
 }
+
+
 
 /* ===== RESPONSIVO ===== */
 @media (max-width: 768px) {
@@ -1493,6 +1158,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* impede rolagem lateral globalmente */
 }
 
 body {
@@ -1505,17 +1171,23 @@ main {
   flex: 1;
 }
 
+.site-footer {
+  width: 100%;
+  overflow: hidden; /* impede o rodapé de “vazar” lateralmente */
+}
+
 .site-footer .footer-image {
   width: 100%;
   position: relative;
-  height: 150px; /* altura menor do rodapé, ajustável */
+  height: 150px;
   overflow: hidden;
 }
 
 .site-footer .footer-image img {
   width: 100%;
-  height: 100%; /* ocupa toda a div mas limitada pela altura acima */
-  object-fit: cover; /* mantém proporção e cobre o espaço */
+  height: 100%;
+  max-width: 100%; /* evita que ultrapasse a viewport */
+  object-fit: cover;
   display: block;
 }
 
@@ -1524,23 +1196,23 @@ main {
   justify-content: center;
   gap: 30px;
   position: absolute;
-  top: 10px; /* mantém no topo da imagem */
+  top: 10px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
+  flex-wrap: wrap; /* evita transbordamento em telas pequenas */
 }
 
 .site-footer .footer-logos img {
   max-height: 50px;
   width: auto;
-  align-self: center; /* 🔹 reforço opcional */
-
+  align-self: center;
 }
 
 .site-footer .footer-logos img.ias {
-  max-height: 100px; /* aumenta só a IAS */
+  max-height: 100px;
   width: auto;
-  align-self: center; /* 🔹 reforço opcional */
+  align-self: center;
 }
 
 .site-footer .footer-text {
@@ -1553,4 +1225,85 @@ main {
   font-weight: 500;
   text-align: center;
   padding: 0 20px;
+}
+.site-footer .footer-image {
+  width: 100%;
+  position: relative;
+  height: 150px;               /* altura do rodapé, ajustável */
+  background-image: url("assets/img/rodapé.png"); /* caminho da sua imagem */
+  background-size: cover;       /* cobre todo o container */
+  background-position: center;  /* centraliza a imagem */
+  background-repeat: no-repeat; /* evita repetição */
+  overflow: hidden;
+}
+
+.site-footer .footer-logos {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: absolute;
+  top: 10px; 
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  flex-wrap: wrap; /* para mobile */
+}
+
+.site-footer .footer-logos img {
+  max-height: 50px;
+  width: auto;
+  align-self: center;
+}
+
+.site-footer .footer-logos img.ias {
+  max-height: 100px;
+  width: auto;
+  align-self: center;
+}
+
+.site-footer .footer-text {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* ===== Ajustes Mobile ===== */
+@media (max-width: 768px) {
+  .site-footer .footer-image {
+    height: auto;
+    padding: 16px 12px;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .site-footer .footer-logos {
+    position: static;
+    transform: none;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .site-footer .footer-logos img {
+    max-height: 48px;
+  }
+
+  .site-footer .footer-logos img.ias {
+    max-height: 64px;
+  }
+
+  .site-footer .footer-text {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    text-align: center;
+    color: #fff;
+  }
 }
