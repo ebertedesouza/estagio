@@ -1122,12 +1122,6 @@ header {
   margin-top: 15px;
 }
 
-.redes-sociais a img {
-  width: 50px;            /* largura uniforme */
-  height: 50px;           /* altura uniforme */
-  object-fit: contain;    /* mantém proporção sem distorcer */
-  transition: transform 0.3s;
-}
 
 .redes-sociais a:hover img {
   transform: scale(1.1);
