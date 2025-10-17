@@ -588,23 +588,6 @@ header {
   box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
 
-/* ===========================
-   PARCEIROS
-=========================== */
-.parceiros-section h2{
-  color: #133b67;
-}
-
-.footer-logos {
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.footer-logos img {
-  height: 50px;
-}
 
 
 /* ===========================
@@ -767,6 +750,50 @@ header {
   }
 }
 
+/* ===========================
+   PARCEIROS
+=========================== */
+.parceiros-section h2 {
+  color: #133b67;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Mantém o mesmo padrão do rodapé */
+.parceiros-section .footer-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.parceiros-section .footer-logos img {
+  max-height: 50px;
+  width: auto;
+  align-self: center;
+}
+
+.parceiros-section .footer-logos img.ias {
+  max-height: 100px; /* mesma proporção usada no rodapé */
+  width: auto;
+  align-self: center;
+}
+
+/* Responsivo — segue o mesmo comportamento do rodapé */
+@media (max-width: 768px) {
+  .parceiros-section .footer-logos {
+    gap: 12px;
+  }
+
+  .parceiros-section .footer-logos img {
+    max-height: 48px;
+  }
+
+  .parceiros-section .footer-logos img.ias {
+    max-height: 64px;
+  }
+}
 
 
 
