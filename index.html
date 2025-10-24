@@ -43,32 +43,14 @@
       <img src="assets/img/banner-home.png" alt="Capacitação da População Rural" loading="lazy">
     </section>
 
-    <section class="section noticias-section container">
+   <section class="section noticias-section container">
       <h2>Notícias</h2>
       <div class="news-grid">
         <div class="news-card reveal">
-          <img src="assets/news1.jpg" alt="Notícia 1">
-          <h3>Oficinas de capacitação serão realizadas em breve</h3>
-          <p class="date">02/10/2025</p>
-          <a href="#" class="btn btn-primary">Ler mais</a>
-        </div>
-        <div class="news-card reveal">
-          <img src="assets/news2.jpg" alt="Notícia 2">
-          <h3>Municípios se preparam para as atividades do projeto</h3>
-          <p class="date">15/09/2025</p>
-          <a href="#" class="btn btn-primary">Ler mais</a>
-        </div>
-        <div class="news-card reveal">
-          <img src="assets/news3.jpg" alt="Notícia 3">
-          <h3>Equipe técnica realiza levantamento de campo</h3>
-          <p class="date">01/09/2025</p>
-          <a href="#" class="btn btn-primary">Ler mais</a>
-        </div>
-        <div class="news-card reveal">
-          <img src="assets/news4.jpg" alt="Relatório Final">
-          <h3>Relatório Final do Projeto</h3>
+          <img src="assets/img/relatorio.jpg" alt="Relatório Final do Projeto">
+          <h4>Relatório Final do Projeto</h4>
           <p class="date">30/11/2025</p>
-          <a href="#" class="btn btn-primary">Baixar Relatório</a>
+          <a href="relatorio.pdf" class="btn btn-primary" target="_blank">Baixar Relatório</a>
         </div>
       </div>
     </section>
@@ -88,37 +70,7 @@
   </main>
 
   
-  <script>
-    (function () {
-      const mobileToggle = document.getElementById('mobileToggle');
-      const navList = document.querySelector('.nav-list');
+    <script src="script.js"></script>
 
-      mobileToggle.addEventListener('click', () => {
-        const expanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-        mobileToggle.setAttribute('aria-expanded', String(!expanded));
-        navList.classList.toggle('open');
-      });
-
-      const topBtn = document.getElementById('topBtnFooter');
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) topBtn.style.display = 'block';
-        else topBtn.style.display = 'none';
-      });
-
-      topBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
-
-      const reveals = document.querySelectorAll('.reveal');
-      const io = new IntersectionObserver((entries) => {
-        entries.forEach(e => {
-          if (e.isIntersecting) {
-            e.target.classList.add('in-view');
-            io.unobserve(e.target);
-          }
-        });
-      }, { threshold: 0.15 });
-
-      reveals.forEach(r => io.observe(r));
-    })();
-  </script>
 </body>
 </html>

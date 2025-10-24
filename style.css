@@ -184,7 +184,7 @@ header {
   }
 
   .banner-top img {
-    content: url("assets/img/banner-home-mobile.png"); /* imagem mobile */
+    content: url("assets/img/banner-home.png"); /* imagem mobile */
     width: 100%;
     height: auto;
     object-fit: contain;       /* mantém toda a imagem visível */
