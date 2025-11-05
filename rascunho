@@ -1,0 +1,257 @@
+//   <!-- CRONOGRAMA -->
+    <section class="section cronograma">
+      <div class="container">
+        <h2>Cronograma de Atividades</h2>
+        <div class="tabela-wrapper">
+          <table class="tabela-cronograma">
+            <thead>
+              <tr>
+                <th>Próximos Passos</th>
+                <th>Set</th>
+                <th>Out</th>
+                <th>Nov</th>
+                <th>Dez</th>
+                <th>Jan</th>
+                <th>Fev</th>
+                <th>Mar</th>
+                <th>Abr</th>
+                <th>Mai</th>
+                <th>Jun</th>
+                <th>Jul</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Coleta de dados em campo e visitas aos produtores</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Elaboração do Material Base das Capacitações</td>
+                <td></td>
+                <td>X</td>
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Divulgação das Capacitações</td>
+                <td></td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Conteúdos de mídias</td>
+                <td></td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+              </tr>
+              <tr>
+                <td>Eventos</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>X</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>X</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Capacitações</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Entrega do Guia de Boas Práticas</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td>X</td>
+                <td>X</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Relatórios</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    
+
+    /* ===========================
+   CRONOGRAMA - TABELA
+=========================== */
+.cronograma-tabela {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px auto;
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.cronograma-tabela th {
+  background-color: #057ea8;
+  color: white;
+  text-align: center;
+  padding: 12px 8px;
+  font-weight: 600;
+}
+
+.cronograma-tabela td {
+  text-align: center;
+  padding: 10px 8px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cronograma-tabela td:first-child {
+  text-align: left;
+  font-weight: 500;
+  color: #333;
+}
+
+.cronograma-tabela tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.cronograma-tabela tr:hover {
+  background-color: #eef9fc;
+  transition: background 0.3s;
+}
+.section.cronograma h2 {
+  color: #133b67;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .cronograma-tabela {
+    font-size: 0.8rem;
+  }
+  .cronograma-tabela th,
+  .cronograma-tabela td {
+    padding: 8px 5px;
+  }
+  .cronograma-tabela td:first-child {
+    font-size: 0.85rem;
+  }
+}
+.tabela-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.tabela-cronograma {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 800px;
+}
+
+.tabela-cronograma th,
+.tabela-cronograma td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.tabela-cronograma th {
+  background-color: #133b67;
+  color: #fff;
+  font-weight: 600;
+}
+
+.tabela-cronograma tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.cronograma img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.center-btn {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .capacitacao-section {
+    padding: 50px 15px;
+  }
+
+  .etapas-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .etapa-card {
+    width: 80%;
+  }
+}

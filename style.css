@@ -158,43 +158,42 @@ header {
 }
 
 /* ===========================
-   BANNER IMAGEM TOP
+   BANNER IMAGEM FULLSCREEN
 =========================== */
 .banner-top {
-  width: 110%;
-  padding-top: 40px; /* altura exata do header */
-  height: 135vh;
+  width: 100%;
+  height: 100%;        
+  padding-top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
 }
 
 .banner-top img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;  
   object-position: center;
 }
 
 /* ===========================
-   BANNER RESPONSIVO
+   BANNER RESPONSIVO MOBILE
 =========================== */
 @media (max-width: 768px) {
   .banner-top {
-    padding-top: 40px; /* altura exata do header */
-    height: auto;      /* banner cresce conforme a imagem */
+    height: auto;       /* deixa a imagem fluir no mobile */
+    padding-top: 40px;
   }
 
   .banner-top img {
-    content: url("assets/img/banner-home.png"); /* imagem mobile */
     width: 100%;
     height: auto;
-    object-fit: contain;       /* mantém toda a imagem visível */
-    object-position: top;      /* topo da imagem visível */
+    object-fit: contain;
+    object-position: center;
     display: block;
   }
 }
-
-
-
 
 /* ===========================
    Home
@@ -545,50 +544,77 @@ header {
   color: #133b67;
 }
 
+/* grid */
 .resultados-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
+/* CARD */
 .resultado-card {
-  position: relative;
-  width: 100%;
-  height: 200px;
-  border-radius: 10px;
+  background: #ffffff;
+  border-radius: 12px;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 500;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative; /
 }
 
 .resultado-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.4);
+  display: none !important;
+  content: none !important;
 }
 
-.resultado-card p {
-  position: relative;
-  z-index: 1;
-  padding: 15px;
+.resultado-media {
+  width: 100%;
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+}
+
+.resultado-content {
+  padding: 18px 16px;
+}
+
+.resultado-content h3 {
+  font-size: 1.2rem;
+  color: #133b67;
+  margin-bottom: 8px;
+}
+
+.resultado-content p {
+  font-size: 0.95rem;
+  color: #444;
 }
 
 .resultado-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.18);
+}
+.resultados-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  justify-items: center;
 }
 
+@media (max-width: 1024px) {
+  .resultados-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
+@media (max-width: 600px) {
+  .resultados-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
 /* ===========================
    MUNICÍPIOS
@@ -660,141 +686,6 @@ header {
   font-size: 0.9rem;
   margin-top: 10px;
 }
-/* ===========================
-   RESULTADOS
-=========================== */
-.resultados-section {
-  padding: 40px 0;
-  background-color: #fff;
-}
-
-.resultados-section h2 {
-  font-size: 2rem;
-  color: #133b67;
-  margin-bottom: 40px;
-  text-align: center;
-}
-
-.resultados-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  justify-items: center;
-}
-
-.resultado-card {
-  position: relative;
-  width: 100%;
-  border-radius: 14px;
-  overflow: hidden;
-  min-height: 350px;
-  background-size: cover;
-  background-position: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.resultado-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 16px rgba(0,0,0,0.3);
-}
-
-.resultado-media {
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-}
-
-.resultado-content {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 20px;
-  z-index: 2;
-  color: #fff;
-  text-align: left;
-  background: linear-gradient(180deg, transparent 40%, rgba(0,0,0,0.7) 100%);
-  border-radius: 0 0 14px 14px;
-}
-
-.resultado-content h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #fff;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-}
-
-.resultado-content p {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #f1f1f1;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
-}
-
-/* Remove qualquer overlay anterior */
-.resultado-card::after {
-  display: none;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .resultado-content h3 {
-    font-size: 1.1rem;
-  }
-  .resultado-content p {
-    font-size: 0.9rem;
-  }
-}
-
-/* ===========================
-   PARCEIROS
-=========================== */
-.parceiros-section h2 {
-  color: #133b67;
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-/* Mantém o mesmo padrão do rodapé */
-.parceiros-section .footer-logos {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 30px;
-  flex-wrap: wrap;
-}
-
-.parceiros-section .footer-logos img {
-  max-height: 50px;
-  width: auto;
-  align-self: center;
-}
-
-.parceiros-section .footer-logos img.ias {
-  max-height: 100px; /* mesma proporção usada no rodapé */
-  width: auto;
-  align-self: center;
-}
-
-/* Responsivo — segue o mesmo comportamento do rodapé */
-@media (max-width: 768px) {
-  .parceiros-section .footer-logos {
-    gap: 12px;
-  }
-
-  .parceiros-section .footer-logos img {
-    max-height: 48px;
-  }
-
-  .parceiros-section .footer-logos img.ias {
-    max-height: 64px;
-  }
-}
-
 
 
 /* ===========================
@@ -837,6 +728,7 @@ header {
 }
 
 .etapas h2 {
+  padding: 80px 0;
   font-size: 2rem;
   color: #133b67;
   margin-bottom: 40px;
@@ -897,7 +789,7 @@ header {
 }
 
 .etapa-content h3 {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -932,126 +824,80 @@ header {
 }
 
 
+
 /* ===========================
-   CRONOGRAMA - TABELA
+   MATERIAL EDUCATIVO
 =========================== */
-.cronograma-tabela {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 30px auto;
-  font-size: 0.95rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-}
-
-.cronograma-tabela th {
-  background-color: #057ea8;
-  color: white;
+.material-educativo-section {
+  padding: 60px 0;
   text-align: center;
-  padding: 12px 8px;
-  font-weight: 600;
 }
 
-.cronograma-tabela td {
-  text-align: center;
-  padding: 10px 8px;
-  border-bottom: 1px solid #e0e0e0;
+.material-educativo-section h2 {
+  font-size: 2rem;
+  color: #0598b4;
+  margin-bottom: 10px;
 }
 
-.cronograma-tabela td:first-child {
-  text-align: left;
-  font-weight: 500;
+.material-educativo-section .lead {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
   color: #333;
 }
 
-.cronograma-tabela tr:nth-child(even) {
-  background-color: #f9f9f9;
+/* GRID */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-items: center;
 }
 
-.cronograma-tabela tr:hover {
-  background-color: #eef9fc;
-  transition: background 0.3s;
-}
-.section.cronograma h2 {
-  color: #133b67;
+/* CARD */
+.material-educativo-section .card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 380px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Responsivo */
+.material-educativo-section .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* IMAGEM — agora cobrindo o card */
+.material-educativo-section .card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* TEXTO */
+.material-educativo-section .card h3 {
+  margin: 20px;
+  font-size: 1.2rem;
+  color: #333;
+  flex-grow: 1;
+}
+
+/* BOTÃO */
+.material-educativo-section .card .btn {
+  margin: 0 20px 20px;
+  align-self: center;
+}
+
+/* MOBILE */
 @media (max-width: 768px) {
-  .cronograma-tabela {
-    font-size: 0.8rem;
+  .cards-grid {
+    grid-template-columns: 1fr;
   }
-  .cronograma-tabela th,
-  .cronograma-tabela td {
-    padding: 8px 5px;
-  }
-  .cronograma-tabela td:first-child {
-    font-size: 0.85rem;
-  }
-}
-.tabela-wrapper {
-  width: 100%;
-  overflow-x: auto;
-}
-
-.tabela-cronograma {
-  border-collapse: collapse;
-  width: 100%;
-  min-width: 800px;
-}
-
-.tabela-cronograma th,
-.tabela-cronograma td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
-  font-size: 0.95rem;
-}
-
-.tabela-cronograma th {
-  background-color: #133b67;
-  color: #fff;
-  font-weight: 600;
-}
-
-.tabela-cronograma tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.cronograma img {
-  width: 100%;
-  max-width: 800px;
-  border-radius: 8px;
-  margin-top: 20px;
-}
-
-.center-btn {
-  text-align: center;
-  margin-top: 40px;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-  .capacitacao-section {
-    padding: 50px 15px;
-  }
-
-  .etapas-grid {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .etapa-card {
-    width: 80%;
-  }
-}
-/* ===========================
-    Material
-=========================== */
-.section.material-educativo-section h2{
-  color: #133b67;
 }
 
 /* ===========================
@@ -1173,158 +1019,97 @@ header {
 
 
 /* ===========================
-   RODAPÉ GRUDADO NA BASE
+      RODAPÉ COMPLETO (ajustado)
 =========================== */
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* impede rolagem lateral globalmente */
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
-main {
-  flex: 1;
-}
 
 .site-footer {
   width: 100%;
-  overflow: hidden; /* impede o rodapé de “vazar” lateralmente */
-}
-
-.site-footer .footer-image {
-  width: 100%;
+  color: #fff;
+  text-align: center;
   position: relative;
-  height: 150px;
-  overflow: hidden;
+  padding: 30px 20px;            
+  background-image: url("assets/img/rodapé.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.site-footer .footer-image img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%; /* evita que ultrapasse a viewport */
-  object-fit: cover;
-  display: block;
+/* Realizadores */
+/* logos dos realizadores (altura padrão) */
+.footer-logos img {
+  height: 60px;
+  max-width: 150px;
+  object-fit: contain;
 }
 
-.site-footer .footer-logos {
+/* aumenta apenas o IAS sem desalinhamento */
+.footer-logos img.ias {
+  height: auto;       /* deixa a imagem ajustar naturalmente */
+  max-height: 80px;   /* controla o tamanho */
+}
+
+
+/* ===========================
+      PARCEIROS (corrigido)
+=========================== */
+.footer-partners {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  position: absolute;
-  top: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  flex-wrap: wrap; /* evita transbordamento em telas pequenas */
+  align-items: center;
+  gap: 22px;
+  margin: 20px auto 0;
 }
 
-.site-footer .footer-logos img {
-  max-height: 50px;
-  width: auto;
-  align-self: center;
-}
-
-.site-footer .footer-logos img.ias {
-  max-height: 100px;
-  width: auto;
-  align-self: center;
-}
-
-.site-footer .footer-text {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: center;
-  padding: 0 20px;
-}
-.site-footer .footer-image {
-  width: 100%;
-  position: relative;
-  height: 150px;               /* altura do rodapé, ajustável */
-  background-image: url("assets/img/rodapé.png"); /* caminho da sua imagem */
-  background-size: cover;       /* cobre todo o container */
-  background-position: center;  /* centraliza a imagem */
-  background-repeat: no-repeat; /* evita repetição */
-  overflow: hidden;
-}
-
-.site-footer .footer-logos {
+/* caixas iguais para cada logo */
+.footer-partners .partner-box {
+  width: 130px;     /* reduz largura */
+  height: 70px;     /* reduz altura */
   display: flex;
   justify-content: center;
-  gap: 30px;
-  position: absolute;
-  top: 10px; 
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 10;
-  flex-wrap: wrap; /* para mobile */
+  align-items: center;
 }
 
-.site-footer .footer-logos img {
-  max-height: 50px;
-  width: auto;
-  align-self: center;
+/* imagem dentro da caixa */
+/* tamanho padrão para todas as logos */
+.footer-partners img {
+  max-width: 100%;
+  max-height: 70px;   /* <<< reduz aqui */
+  object-fit: contain;
 }
 
-.site-footer .footer-logos img.ias {
-  max-height: 100px;
-  width: auto;
-  align-self: center;
+/* CATI maior */
+.footer-partners img.logo-cati {
+  max-height: 90px;
 }
 
-.site-footer .footer-text {
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #fff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-align: center;
-  padding: 0 20px;
+/* Sindicato menor */
+.footer-partners img.logo-sindicato {
+  max-height: 55px;   /* <<< diminui aqui */
+}
+.footer-text {
+  margin-top: 25px;
+  font-size: 0.6rem;
+  margin-bottom: 8px;
+  font-weight: 600;
 }
 
-/* ===== Ajustes Mobile ===== */
-@media (max-width: 768px) {
-  .site-footer .footer-image {
-    height: auto;
-    padding: 16px 12px;
-    background-size: cover;
-    background-position: center top;
+/* MOBILE */
+@media (max-width: 600px) {
+  .footer-partners {
+    gap: 10px;
+    margin-top: 15px;
   }
 
-  .site-footer .footer-logos {
-    position: static;
-    transform: none;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    gap: 12px;
+  .footer-partners .partner-box {
+    width: 90px;
+    height: 55px;
   }
 
-  .site-footer .footer-logos img {
-    max-height: 48px;
+  .footer-partners img {
+    max-height: 55px;
   }
 
-  .site-footer .footer-logos img.ias {
-    max-height: 64px;
-  }
-
-  .site-footer .footer-text {
-    position: static;
-    transform: none;
-    margin-top: 10px;
-    font-size: 0.9rem;
-    text-align: center;
-    color: #fff;
+  .footer-partners img.logo-cati {
+    max-height: 65px;
   }
 }

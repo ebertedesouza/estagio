@@ -1,0 +1,336 @@
+/* ===========================
+   ESTILOS GERAIS
+=========================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+main {
+  flex: 1;
+}
+
+/* ===========================
+   CABEÇALHO FIXO
+=========================== */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #133b67;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.brand-icon {
+  width: 30px;
+  height: 30px;
+}
+
+/* ===========================
+   MENU HAMBURGUER
+=========================== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin-left: auto;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* ===========================
+   MENU PRINCIPAL
+=========================== */
+.nav-list {
+  display: flex;
+  gap: 25px;
+}
+
+.nav-list li a {
+  font-weight: 500;
+  color: #fff;
+  transition: 0.3s;
+}
+
+.nav-list li a:hover,
+.nav-list li a.active {
+  color: #b4d445;
+}
+
+/* ===========================
+   RESPONSIVO
+=========================== */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    gap: 15px;
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: #133b67;
+    width: 220px;
+    padding: 20px;
+    border-radius: 0 0 0 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+
+  .nav-list.open {
+    display: flex;
+  }
+}
+
+/* ===========================
+   SEÇÕES
+=========================== */
+.section {
+  padding: 120px 20px 80px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #133b67;
+}
+
+.section p {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+/* ===========================
+   BANNER IMAGEM TOP
+=========================== */
+.banner-top {
+  width: 110%;
+  height: 135vh;
+  overflow: hidden;
+}
+
+.banner-top img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* ===========================
+   BANNER RESPONSIVO
+=========================== */
+@media (max-width: 768px) {
+  .banner-top {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    overflow: hidden;
+  }
+
+  .banner-top img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 70%;
+    display: block;
+  }
+
+  .hero-text-section {
+    padding: 40px 15px;
+  }
+}
+
+/* ===========================
+   HERO
+=========================== */
+.hero-text-section {
+  text-align: center;
+  padding: 80px 20px 120px;
+}
+
+.hero-text-section h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #133b67;
+}
+
+.hero-text-section p {
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+}
+
+.hero-text-section .btn {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 40px;
+  padding: 12px 28px;
+  background: #133b67;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.hero-text-section .btn:hover {
+  background: #133b67;
+}
+
+/* ===========================
+   CARDS
+=========================== */
+.cards-grid,
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card,
+.news-card {
+  background: #f4f4f4;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.card img,
+.news-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h3,
+.news-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.card a,
+.news-card a {
+  display: inline-block;
+  margin-top: 10px;
+  background: #133b67;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.card a:hover,
+.news-card a:hover {
+  background: #133b67;
+}
+
+/* ===========================
+   NOTÍCIAS
+=========================== */
+.noticias-section h2 {
+  font-size: 2rem;
+  color: #133b67;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.news-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.news-card h3 {
+  font-size: 1.2rem;
+  margin: 15px 20px 10px;
+}
+
+.news-card .date {
+  margin: 0 20px 15px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.news-card .btn {
+  margin: 0 0 20px;
+  align-self: center;
+}
+

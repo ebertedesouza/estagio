@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         location.pathname === "/" ||
         document.title.includes("Home");
 
-      const noticiasMostrar = isHome ? noticias.slice(0, 3) : noticias;
+      const noticiasMostrar = isHome ? noticias.slice(0, 4) : noticias;
 
       noticiasMostrar.forEach((n) => {
         if (n.titulo.toLowerCase().includes("relatório")) return;
